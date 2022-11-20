@@ -27,3 +27,15 @@ elseif ($action == "add_matkul") {
     $koneksi->delete_matkul($id_matkul);
     header('location:matkul.php');
 } 
+
+elseif ($action == "add_krs") {
+    $koneksi->tambah_krs($_POST['id_mhs'], $_POST['id_matkul']);
+    header('location:krs.php');
+} elseif ($action == "update_krs") {
+    $koneksi->update_krs($_POST['id_mhs'], $_POST['id_matkul'], $_POST['id_krs']);
+    header('location:krs.php');
+} elseif ($action == "delete_krs") {
+    $id_krs = $_GET['id_krs'];
+    $koneksi->delete_krs($id_krs);
+    header('location:krs.php');
+}

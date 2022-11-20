@@ -15,7 +15,7 @@ $data_matkul = $db->tampil_data_matkul();
     <ul>
         <li><a href="mahasiswa.php" style="text-decoration: none; color: black;">Mahasiswa</a></li>
         <li><a href="matkul.php" style="text-decoration: none; color: red;">Mata Kuliah</a></li>
-        <li><a href="krs" style="text-decoration: none; color: black;">KRS</a></li>
+        <li><a href="krs.php" style="text-decoration: none; color: black;">KRS</a></li>
     </ul>
     <h3>Data Mahasiswa</h3>
     <a href="tambah_matkul.php">+ Tambah Mata Kuliah</a>

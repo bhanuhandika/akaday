@@ -31,6 +31,16 @@ class database{
 		return $hasil;
 	}
 
+	function tampil_data_krs()
+	{
+		// $data = mysqli_query($this->koneksi,"select * from tb_krs");
+		$data = mysqli_query($this->koneksi,"select * from tb_krs left join tb_mahasiswa ON tb_krs.id_mhs = tb_mahasiswa.id_mhs left join tb_matkul ON tb_krs.id_matkul = tb_matkul.id_matkul;");
+		while($row = mysqli_fetch_array($data)){
+			$hasil[] = $row;
+		}
+		return $hasil;
+	}
+
 	function tambah_mhs($nim,$nama_mhs,$prodi_mhs)
 	{
 		mysqli_query($this->koneksi,"insert into tb_mahasiswa values ('','$nim','$nama_mhs','$prodi_mhs')");
@@ -73,6 +83,30 @@ class database{
 	function delete_matkul($id_matkul)
 	{
 		mysqli_query($this->koneksi,"delete from tb_matkul where id_matkul='$id_matkul'");
+	}
+
+
+
+	function tambah_krs($id_mhs,$id_matkul)
+	{
+		mysqli_query($this->koneksi,"insert into tb_krs values ('','$id_mhs','$id_matkul')");
+	}
+
+	function get_by_id_krs($id_krs)
+	{
+		// $query = mysqli_query($this->koneksi,"select * from tb_krs where id_krs='$id_krs'");
+		$query = mysqli_query($this->koneksi,"select * from tb_krs left join tb_mahasiswa ON tb_krs.id_mhs = tb_mahasiswa.id_mhs left join tb_matkul ON tb_krs.id_matkul = tb_matkul.id_matkul where id_krs='$id_krs';");
+		return $query->fetch_array();
+	}
+
+	function update_krs($id_mhs, $id_matkul, $id_krs)
+	{
+		mysqli_query($this->koneksi,"update tb_krs set id_mhs='$id_mhs', id_matkul='$id_matkul' where id_krs='$id_krs'");
+	}
+
+	function delete_krs($id_krs)
+	{
+		mysqli_query($this->koneksi,"delete from tb_krs where id_krs='$id_krs'");
 	}
 }
 ?>

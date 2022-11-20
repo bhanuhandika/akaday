@@ -15,7 +15,7 @@
     <ul>
         <li><a href="mahasiswa.php" style="text-decoration: none; color: red;">Mahasiswa</a></li>
         <li><a href="matkul.php" style="text-decoration: none; color: black;">Mata Kuliah</a></li>
-        <li><a href="krs" style="text-decoration: none; color: black;">KRS</a></li>
+        <li><a href="krs.php" style="text-decoration: none; color: black;">KRS</a></li>
     </ul>
     <h3>Data Mahasiswa</h3>
     <a href="tambah_mhs.php">+ Tambah Mahasiswa</a>
